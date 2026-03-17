@@ -1,0 +1,148 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  max-width: 70%;
+  position: relative;
+}
+
+.message.sent {
+  align-self: flex-end;
+}
+
+.message.received {
+  align-self: flex-start;
+}
+
+.message-sender {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.message-bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--bg-light);
+  word-wrap: break-word;
+}
+
+.message.sent .message-bubble {
+  background: var(--primary);
+  color: white;
+}
+
+.deleted-message {
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.edited-indicator {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-left: 6px;
+}
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.message.sent .message-meta {
+  justify-content: flex-end;
+}
+
+.message-time {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.message-menu-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.message:hover .message-menu-btn {
+  opacity: 1;
+}
+
+.message-menu {
+  position: absolute;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.message.sent .message-menu {
+  right: 0;
+}
+
+.message.received .message-menu {
+  left: 0;
+}
+
+.message-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.message-menu button:hover {
+  background: var(--bg-light);
+}
+
+.message-edit {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.message-edit input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.edit-actions button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.edit-actions button:first-child {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+
+.edit-actions button:last-child {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+}
